@@ -2,8 +2,8 @@
 
 **An incremental fishing game prototype**
 
-**Play online:** _Netlify URL will be added after deployment._  
-**Design case study:** [Game Design Case Study (PDF)](docs/submission/Quiet_Cove_Game_Design_Case_Study_EN.pdf)  
+**Play online:** https://quiet-cove.netlify.app/  
+**Design case study:** [Game Design Case Study (PDF)](docs/submission/Quiet_Cove_Game_Design_Case_Study_EN_FINAL.pdf)  
 **Quest & economy:** [Quest & Economy Breakdown (XLSX)](docs/submission/Quiet_Cove_Quest_Economy_Breakdown_EN.xlsx)
 
 ## About
