@@ -1,0 +1,29 @@
+import {chromium} from '@playwright/test';
+import {build} from 'esbuild';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const output='test-results/v05c',traces={},checks=[],errors=[];
+const fixture=await build({stdin:{contents:`export {newState} from './src/game/state';export {harvest} from './src/game/systems/resources';`,resolveDir:process.cwd()},bundle:true,platform:'browser',format:'iife',globalName:'TimelineFixtures',write:false});
+const browser=await chromium.launch({headless:true,...process.platform==='win32'?{channel:'msedge'}:{}});
+try{
+ const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+ for(const quality of ['high','low','off']){
+  await page.goto(`http://127.0.0.1:4193/?debug=1&vfx=${quality}`);await page.waitForFunction(()=>window.__fishing?.ui);await page.addScriptTag({content:fixture.outputFiles[0].text});
+  if(await page.locator('#debug').isVisible())await page.locator('#debug [data-action="debug"]').click();
+  await page.evaluate(()=>{const f=window.__fishing,s=TimelineFixtures.newState(f.engine.config),r=f.engine.config.resources.sardine;f.engine.state=s;f.engine.paused=true;s.cargoLevel=10;s.golden.nextAt=1e9;Object.assign(s.boats[0],{x:r.x+65,y:r.y+30,angle:0});s.boats[0].cargo=Array.from({length:4},()=>({id:s.nextId++,resource:'sardine',kind:'fish',value:5}));});await page.waitForTimeout(100);
+  const pickup=await page.evaluate(()=>new Promise(resolve=>{const f=window.__fishing,result=[],start=f.scene.visualTime;TimelineFixtures.harvest(f.engine.config,f.engine.state,f.engine.state.boats[0],'sardine',f.engine.config.resources.sardine.gather_s);const listener=()=>{const flight=f.scene.effects.flights[0],v=f.scene.boatViews.get('player');result.push({ms:(f.scene.visualTime-start)*1000,flight:flight?{x:flight.image.x,y:flight.image.y}:null,cargo:v.cargo.length,hidden:v.cargo.filter(c=>!c.image.visible).length,bounce:v.motion.impact,logical:f.engine.state.boats[0].cargo.length});if(f.scene.visualTime-start>.5){f.scene.events.off('postupdate',listener);resolve(result);}};f.scene.events.on('postupdate',listener);}));
+  assert.ok(pickup.filter(x=>x.flight).length>10);assert.equal(pickup.at(-1).logical,5);assert.equal(pickup.at(-1).hidden,0);assert.ok(pickup.some(x=>x.hidden===1));assert.ok(pickup.some(x=>x.bounce>0));assert.equal(new Set(pickup.filter(x=>x.flight).map(x=>Math.round(x.flight.x))).size>3,true);
+  traces[`${quality}-pickup`]=pickup;checks.push(`${quality}: frame-by-frame 280ms arc, hidden duplicate, landing bounce, exactly five logical crates`);
+  await page.evaluate(()=>{const f=window.__fishing,s=f.engine.state;s.boats[0].cargo=Array.from({length:7},()=>({id:s.nextId++,resource:'sardine',kind:'fish',value:5}));s.nodes.sardine.phase='ready';s.nodes.sardine.hp=f.engine.config.resources.sardine.portion_hp;});await page.waitForTimeout(80);
+  await page.evaluate(()=>{const f=window.__fishing;TimelineFixtures.harvest(f.engine.config,f.engine.state,f.engine.state.boats[0],'sardine',f.engine.config.resources.sardine.gather_s);});await page.waitForTimeout(60);assert.equal(await page.evaluate(()=>window.__fishing.scene.effects.flights.length),1);await page.waitForTimeout(350);assert.equal(await page.evaluate(()=>window.__fishing.engine.state.boats[0].cargo.length),8);assert.equal(await page.evaluate(()=>window.__fishing.scene.boatViews.get('player').cargo.length),7);checks.push(`${quality}: eighth crate still flies to capped stack, logical cargo=8 and visible=7`);
+  // Moving corner turns should create visible inertia and settle after stopping.
+  await page.evaluate(()=>{const f=window.__fishing;f.engine.paused=false;f.scene.cancelControl();});await page.keyboard.down('D');await page.waitForTimeout(220);await page.keyboard.up('D');await page.keyboard.down('W');
+  const turn=await page.evaluate(()=>new Promise(resolve=>{const f=window.__fishing,result=[],start=f.scene.visualTime;const listener=()=>{const v=f.scene.boatViews.get('player');result.push({ms:(f.scene.visualTime-start)*1000,lean:v.motion.lean,angle:f.engine.state.boats[0].angle,world:{x:f.engine.state.boats[0].x,y:f.engine.state.boats[0].y},visual:{x:v.hull.x,y:v.hull.y},particles:f.scene.effects.particles.filter(p=>p.active).length});if(f.scene.visualTime-start>.3){f.scene.events.off('postupdate',listener);resolve(result);}};f.scene.events.on('postupdate',listener);}));
+  await page.keyboard.up('W');assert.ok(turn.some(x=>Math.abs(x.lean)>.01));assert.ok(turn.every(x=>Math.abs(x.lean)<=7*Math.PI/180));if(quality==='off')assert.equal(turn.at(-1).particles,0);else assert.ok(turn.some(x=>x.particles>0));
+  await page.screenshot({path:`${output}/browser/turn-${quality}.png`});await page.waitForTimeout(1300);assert.ok(await page.evaluate(()=>Math.abs(window.__fishing.scene.boatViews.get('player').motion.lean)<.002));traces[`${quality}-turn`]=turn;checks.push(`${quality}: moving turn produces >0.57-degree lean below 7-degree cap, spring returns to rest, quality affects particles only`);
+  if(quality!=='off'){
+   const priority=await page.evaluate(quality=>{const e=window.__fishing.scene.effects,limit=quality==='low'?48:192;for(let i=0;i<limit;i++)Object.assign(e.particles[i],{active:true,age:0,duration:1,kind:'wake'});e.spark(1000,1000,3,0xffdf84);return {count:e.particles.filter(p=>p.active).length,sparks:e.particles.slice(0,limit).filter(p=>p.kind==='spark').length};},quality);assert.ok(priority.sparks>=3);assert.ok(priority.count<=192);checks.push(`${quality}: collection sparkle replaces wake in a full decorative pool`);
+  }
+ }
+ assert.deepEqual(errors,[]);fs.writeFileSync(`${output}/animation-timeline.json`,JSON.stringify({result:'passed',checks,errors,traces},null,2));console.log(JSON.stringify({result:'passed',checks},null,2));await context.close();
+}finally{await browser.close();}

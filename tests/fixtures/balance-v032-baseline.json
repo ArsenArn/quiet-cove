@@ -1,0 +1,2068 @@
+{
+  "reference": {
+    "meta": {
+      "label": "Reference-inspired v1",
+      "source": "Life of Ants 1.0.2 as inspiration + hypothesized fishing distances and quest rewards",
+      "caveat": "NOT measured gameplay timing; simplified simulation"
+    },
+    "units": {
+      "player": {
+        "speed": 165,
+        "capacity": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "gather_s": 1.5,
+        "deposit_s_per_crate": 0.09,
+        "hp": 80,
+        "damage": 8
+      },
+      "worker": {
+        "speed": 80.75,
+        "capacity": 3,
+        "gather_s": 1.95
+      },
+      "speedboat": {
+        "speed": 150,
+        "capacity": 2,
+        "gather_s": 1
+      },
+      "salvage": {
+        "speed": 95,
+        "capacity": 5,
+        "gather_s": 1.8
+      }
+    },
+    "workers": {
+      "base_cost": 100,
+      "cost_growth": 1.75,
+      "max_count": 10,
+      "timers_s": [
+        5,
+        30,
+        30,
+        60,
+        90,
+        150,
+        300,
+        600,
+        900,
+        1800
+      ]
+    },
+    "capacity_upgrades": [
+      {
+        "level": 1,
+        "capacity": 2,
+        "cost": 20,
+        "build_s": 5
+      },
+      {
+        "level": 2,
+        "capacity": 4,
+        "cost": 150,
+        "build_s": 5
+      },
+      {
+        "level": 3,
+        "capacity": 5,
+        "cost": 500,
+        "build_s": 30
+      },
+      {
+        "level": 4,
+        "capacity": 6,
+        "cost": 1000,
+        "build_s": 60
+      },
+      {
+        "level": 5,
+        "capacity": 7,
+        "cost": 2000,
+        "build_s": 120
+      },
+      {
+        "level": 6,
+        "capacity": 8,
+        "cost": 3000,
+        "build_s": 300
+      },
+      {
+        "level": 7,
+        "capacity": 9,
+        "cost": 5000,
+        "build_s": 600
+      },
+      {
+        "level": 8,
+        "capacity": 10,
+        "cost": 20000,
+        "build_s": 900
+      },
+      {
+        "level": 9,
+        "capacity": 11,
+        "cost": 75000,
+        "build_s": 1200
+      },
+      {
+        "level": 10,
+        "capacity": 12,
+        "cost": 150000,
+        "build_s": 1500
+      }
+    ],
+    "special": {
+      "speedboat": {
+        "cost": 300,
+        "build_s": 30
+      },
+      "combat": {
+        "cost": 12000,
+        "build_s": 120
+      }
+    },
+    "expansion": {
+      "gate": {
+        "cost": 12000,
+        "build_s": 900
+      },
+      "den": {
+        "cost": 26000,
+        "metal_cost": 50,
+        "build_s": 300
+      },
+      "route": {
+        "cost": 60000,
+        "metal_cost": 80,
+        "build_s": 600
+      }
+    },
+    "resources": {
+      "sardine": {
+        "name": "Сардины",
+        "value": 2,
+        "cost": 0,
+        "stock": 10,
+        "portion_hp": 100,
+        "regrow_s": 3,
+        "restock_s": 35,
+        "build_s": 0,
+        "distance": 398,
+        "zone": 1,
+        "drop_crates": 15,
+        "x": 1450,
+        "y": 1180,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#98ded0"
+      },
+      "crab": {
+        "name": "Крабы",
+        "value": 4,
+        "cost": 90,
+        "stock": 8,
+        "portion_hp": 120,
+        "regrow_s": 4,
+        "restock_s": 60,
+        "build_s": 5,
+        "distance": 511,
+        "zone": 1,
+        "drop_crates": 15,
+        "x": 1060,
+        "y": 840,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#fb9b72"
+      },
+      "mussel": {
+        "name": "Мидии",
+        "value": 6,
+        "cost": 700,
+        "stock": 6,
+        "portion_hp": 140,
+        "regrow_s": 6,
+        "restock_s": 120,
+        "build_s": 180,
+        "distance": 601,
+        "zone": 1,
+        "drop_crates": 15,
+        "x": 490,
+        "y": 1390,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#b5a2f5"
+      },
+      "snapper": {
+        "name": "Луциан",
+        "value": 10,
+        "cost": 1600,
+        "stock": 5,
+        "portion_hp": 150,
+        "regrow_s": 10,
+        "restock_s": 280,
+        "build_s": 300,
+        "distance": 611,
+        "zone": 1,
+        "drop_crates": 15,
+        "x": 1130,
+        "y": 1960,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#f07982"
+      },
+      "tuna": {
+        "name": "Тунец",
+        "value": 15,
+        "cost": 6000,
+        "stock": 5,
+        "portion_hp": 180,
+        "regrow_s": 12,
+        "restock_s": 420,
+        "build_s": 600,
+        "distance": 849,
+        "zone": 1,
+        "drop_crates": 15,
+        "x": 1570,
+        "y": 650,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#73bae8"
+      },
+      "lobster": {
+        "name": "Омары",
+        "value": 28,
+        "cost": 8000,
+        "stock": 5,
+        "portion_hp": 300,
+        "regrow_s": 15,
+        "restock_s": 900,
+        "build_s": 900,
+        "distance": 850,
+        "zone": 2,
+        "drop_crates": 15,
+        "x": 2160,
+        "y": 950,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#ee804e"
+      },
+      "swordfish": {
+        "name": "Рыба-меч",
+        "value": 48,
+        "cost": 55000,
+        "stock": 4,
+        "portion_hp": 500,
+        "regrow_s": 24,
+        "restock_s": 1500,
+        "build_s": 900,
+        "distance": 1050,
+        "zone": 2,
+        "drop_crates": 15,
+        "x": 2590,
+        "y": 650,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#b2d8ef"
+      },
+      "squid": {
+        "name": "Кальмар",
+        "value": 80,
+        "cost": 90000,
+        "stock": 3,
+        "portion_hp": 700,
+        "regrow_s": 30,
+        "restock_s": 3300,
+        "build_s": 900,
+        "distance": 1250,
+        "zone": 2,
+        "drop_crates": 15,
+        "x": 2860,
+        "y": 1720,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#cc99ec"
+      },
+      "wreck": {
+        "name": "Затонувший корабль",
+        "value": 0,
+        "cost": 4000,
+        "stock": 12,
+        "portion_hp": 50,
+        "regrow_s": 3,
+        "restock_s": 240,
+        "build_s": 120,
+        "distance": 600,
+        "zone": 2,
+        "drop_crates": 15,
+        "x": 2470,
+        "y": 1950,
+        "gather_s": 2,
+        "damage_per_catch": 10,
+        "kind": "metal",
+        "color": "#b1bfc1"
+      }
+    },
+    "monetization": {
+      "free_skip_below_s": 60,
+      "rewarded_skip_s": 900,
+      "golden_min_coins": 75,
+      "golden_estimate_seconds": 90,
+      "golden_first_s_assumption": 150,
+      "golden_cooldown_claimed_s": 150,
+      "golden_cooldown_missed_s": 250,
+      "golden_lifetime_s": 45,
+      "fake_ad_s": 2
+    },
+    "ai": {
+      "choose_best_probability": 0.65,
+      "worker_utilization_multiplier": 1
+    },
+    "simulation": {
+      "dt_s": 0.2,
+      "max_time_s": 14400,
+      "rng_seed": 42
+    },
+    "quests": [
+      {
+        "id": 1,
+        "zone": 1,
+        "label": "Поймать первую сардину",
+        "type": "catch_sardine",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "catch",
+        "reward_coins": 12,
+        "reward_metal": 0
+      },
+      {
+        "id": 2,
+        "zone": 1,
+        "label": "Доставить улов в порт",
+        "type": "deliver_fish",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "deposited",
+        "reward_coins": 18,
+        "reward_metal": 0
+      },
+      {
+        "id": 3,
+        "zone": 1,
+        "label": "Поймать всего 3 ящика улова",
+        "type": "catch_total",
+        "target": 3,
+        "progress_mode": "lifetime",
+        "completes_when": "catch",
+        "reward_coins": 24,
+        "reward_metal": 0
+      },
+      {
+        "id": 4,
+        "zone": 1,
+        "label": "Улучшить трюм до Lv.1",
+        "type": "cargo_level",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 24,
+        "reward_metal": 0
+      },
+      {
+        "id": 5,
+        "zone": 1,
+        "label": "Открыть крабовую отмель",
+        "type": "resource_ready",
+        "target": "crab",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 35,
+        "reward_metal": 0
+      },
+      {
+        "id": 6,
+        "zone": 1,
+        "label": "Нанять первую рабочую лодку",
+        "type": "normal_workers",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 45,
+        "reward_metal": 0
+      },
+      {
+        "id": 7,
+        "zone": 1,
+        "label": "Улучшить трюм до Lv.2",
+        "type": "cargo_level",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 60,
+        "reward_metal": 0
+      },
+      {
+        "id": 8,
+        "zone": 1,
+        "label": "Заработать 200 монет",
+        "type": "earn_coins",
+        "target": 200,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 80,
+        "reward_metal": 0
+      },
+      {
+        "id": 9,
+        "zone": 1,
+        "label": "Заказать скоростной катер",
+        "type": "speedboat_ordered",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "order_paid",
+        "reward_coins": 60,
+        "reward_metal": 0
+      },
+      {
+        "id": 10,
+        "zone": 1,
+        "label": "Получить скоростной катер",
+        "type": "speedboat_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 90,
+        "reward_metal": 0
+      },
+      {
+        "id": 11,
+        "zone": 1,
+        "label": "Открыть мидиевую банку",
+        "type": "resource_ready",
+        "target": "mussel",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 120,
+        "reward_metal": 0
+      },
+      {
+        "id": 12,
+        "zone": 1,
+        "label": "Довести обычный флот до 3 лодок",
+        "type": "normal_workers",
+        "target": 3,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 180,
+        "reward_metal": 0
+      },
+      {
+        "id": 13,
+        "zone": 1,
+        "label": "Открыть косяк красного луциана",
+        "type": "resource_ready",
+        "target": "snapper",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 240,
+        "reward_metal": 0
+      },
+      {
+        "id": 14,
+        "zone": 1,
+        "label": "Открыть косяк тунца",
+        "type": "resource_ready",
+        "target": "tuna",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 450,
+        "reward_metal": 0
+      },
+      {
+        "id": 15,
+        "zone": 1,
+        "label": "Открыть проход в открытое море",
+        "type": "area_unlocked",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 700,
+        "reward_metal": 0
+      },
+      {
+        "id": 16,
+        "zone": 2,
+        "label": "Приобрести боевой катер",
+        "type": "defender_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 1080,
+        "reward_metal": 0
+      },
+      {
+        "id": 17,
+        "zone": 2,
+        "label": "Победить двух пиратов",
+        "type": "pirates_killed",
+        "target": 2,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 1350,
+        "reward_metal": 0
+      },
+      {
+        "id": 18,
+        "zone": 2,
+        "label": "Открыть место ловли омаров",
+        "type": "resource_ready",
+        "target": "lobster",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 1620,
+        "reward_metal": 0
+      },
+      {
+        "id": 19,
+        "zone": 2,
+        "label": "Увеличить флот до 5 обычных лодок",
+        "type": "normal_workers",
+        "target": 5,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 1890,
+        "reward_metal": 0
+      },
+      {
+        "id": 20,
+        "zone": 2,
+        "label": "Улучшить трюм до Lv.4",
+        "type": "cargo_level",
+        "target": 4,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 2160,
+        "reward_metal": 0
+      },
+      {
+        "id": 21,
+        "zone": 2,
+        "label": "Построить склад металлолома",
+        "type": "metal_storage_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 2430,
+        "reward_metal": 0
+      },
+      {
+        "id": 22,
+        "zone": 2,
+        "label": "Купить оборудование для резки металла",
+        "type": "metal_cutter_owned",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "order_paid",
+        "reward_coins": 2700,
+        "reward_metal": 0
+      },
+      {
+        "id": 23,
+        "zone": 2,
+        "label": "Доставить затонувший корабль",
+        "type": "wreck_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 2970,
+        "reward_metal": 0
+      },
+      {
+        "id": 24,
+        "zone": 2,
+        "label": "Доставить 10 единиц металлолома",
+        "type": "metal_deposited",
+        "target": 10,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 3240,
+        "reward_metal": 0
+      },
+      {
+        "id": 25,
+        "zone": 2,
+        "label": "Нанять первое судно-разборщик",
+        "type": "salvage_workers",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 3510,
+        "reward_metal": 0
+      },
+      {
+        "id": 26,
+        "zone": 2,
+        "label": "Доставить 50 единиц металлолома",
+        "type": "metal_deposited",
+        "target": 50,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 3780,
+        "reward_metal": 0
+      },
+      {
+        "id": 27,
+        "zone": 2,
+        "label": "Открыть место ловли рыбы-меч",
+        "type": "resource_ready",
+        "target": "swordfish",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 4050,
+        "reward_metal": 0
+      },
+      {
+        "id": 28,
+        "zone": 2,
+        "label": "Увеличить флот до 7 обычных лодок",
+        "type": "normal_workers",
+        "target": 7,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 4320,
+        "reward_metal": 0
+      },
+      {
+        "id": 29,
+        "zone": 2,
+        "label": "Улучшить трюм до Lv.6",
+        "type": "cargo_level",
+        "target": 6,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 4590,
+        "reward_metal": 0
+      },
+      {
+        "id": 30,
+        "zone": 2,
+        "label": "Увеличить вместимость склада металла до 150",
+        "type": "metal_storage_capacity",
+        "target": 150,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 4860,
+        "reward_metal": 0
+      },
+      {
+        "id": 31,
+        "zone": 2,
+        "label": "Ликвидировать пиратское логово",
+        "type": "pirate_den_closed",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 5130,
+        "reward_metal": 0
+      },
+      {
+        "id": 32,
+        "zone": 2,
+        "label": "Открыть место ловли редкого кальмара",
+        "type": "resource_ready",
+        "target": "squid",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 5400,
+        "reward_metal": 0
+      },
+      {
+        "id": 33,
+        "zone": 2,
+        "label": "Нанять второе судно-разборщик",
+        "type": "salvage_workers",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 5670,
+        "reward_metal": 0
+      },
+      {
+        "id": 34,
+        "zone": 2,
+        "label": "Открыть дальний морской маршрут",
+        "type": "expedition_route_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 5940,
+        "reward_metal": 0
+      }
+    ],
+    "schema_version": 1,
+    "profile": "reference",
+    "world": {
+      "width": 3300,
+      "height": 2400,
+      "port": {
+        "x": 1090,
+        "y": 1350
+      },
+      "storage": {
+        "x": 2480,
+        "y": 1500
+      },
+      "gate_x": 1850,
+      "spawn": {
+        "x": 1150,
+        "y": 1350
+      },
+      "resource_radius": 78,
+      "pickup_radius": 35,
+      "deposit_radius": 38,
+      "crate_scatter_radius": 65,
+      "worker_pickup_radius": 150,
+      "arrival_radius": 12,
+      "camera_zoom": 1,
+      "edge_margin": 30,
+      "max_world_resource_crates": 150,
+      "floating_crate_lifetime_s": 60
+    },
+    "combat": {
+      "pirate_hp": 100,
+      "pirate_damage": 10,
+      "pirate_speed": 100,
+      "defender_hp": 240,
+      "defender_damage": 28,
+      "defender_speed": 150,
+      "attack_s": 1.2,
+      "attack_radius": 180,
+      "detect_radius": 450,
+      "chase_radius": 650,
+      "projectile_speed": 480,
+      "projectile_lifetime_s": 3,
+      "spawn_s": 30,
+      "max_enemies": 3,
+      "respawn_s": 8,
+      "spawner": {
+        "x": 2750,
+        "y": 1100
+      },
+      "defender_spawn": {
+        "x": 2290,
+        "y": 1190
+      }
+    },
+    "salvage": {
+      "storage": {
+        "cost": 5000,
+        "metal_cost": 0,
+        "build_s": 180,
+        "capacity": 100
+      },
+      "cutter": {
+        "cost": 1500,
+        "metal_cost": 0,
+        "build_s": 0
+      },
+      "worker": {
+        "cost": 6000,
+        "cost_growth": 1.7,
+        "metal_cost": 0,
+        "build_s": 180,
+        "max_count": 3
+      },
+      "upgrade": {
+        "cost": 18000,
+        "metal_cost": 30,
+        "build_s": 300,
+        "capacity": 150
+      }
+    },
+    "save": {
+      "autosave_s": 5,
+      "max_events": 5000
+    },
+    "interaction": {
+      "purchase_radius": 48,
+      "coins_per_s": 75,
+      "metal_per_s": 8,
+      "coin_delay_s": 0.4,
+      "coin_radius": 38,
+      "coin_speed": 420,
+      "max_coin_stacks": 12,
+      "purchase_points": {
+        "cargo": {
+          "x": 880,
+          "y": 1530
+        },
+        "worker": {
+          "x": 670,
+          "y": 1340
+        },
+        "speedboat": {
+          "x": 880,
+          "y": 1150
+        },
+        "gate": {
+          "x": 1750,
+          "y": 1280
+        },
+        "defender": {
+          "x": 2250,
+          "y": 1220
+        },
+        "storage": {
+          "x": 2470,
+          "y": 1370
+        },
+        "cutter": {
+          "x": 2420,
+          "y": 1640
+        },
+        "salvage": {
+          "x": 2690,
+          "y": 1510
+        },
+        "storageUpgrade": {
+          "x": 2600,
+          "y": 1370
+        },
+        "den": {
+          "x": 2680,
+          "y": 1280
+        },
+        "route": {
+          "x": 3080,
+          "y": 2060
+        }
+      },
+      "purchase_stationary_delay_s": 0.25,
+      "purchase_max_stationary_speed": 5,
+      "coin_scatter_radius": 22,
+      "reveal_at_quest": {
+        "cargo": 4,
+        "worker": 6,
+        "speedboat": 9,
+        "resource:sardine": 1,
+        "resource:crab": 5,
+        "resource:mussel": 11,
+        "resource:snapper": 13,
+        "resource:tuna": 14,
+        "gate": 15,
+        "defender": 16,
+        "resource:lobster": 18,
+        "storage": 21,
+        "cutter": 22,
+        "resource:wreck": 23,
+        "salvage": 25,
+        "resource:swordfish": 27,
+        "storageUpgrade": 30,
+        "den": 31,
+        "resource:squid": 32,
+        "route": 34
+      },
+      "purchase_cooldown_s": 5,
+      "purchase_exit_hysteresis": 10,
+      "purchase_pour_min_seconds": 1,
+      "purchase_pour_max_seconds": 3,
+      "purchase_pour_ease": 1.4,
+      "purchase_pour_cost_scale": 100,
+      "joystick_radius": 59,
+      "joystick_deadzone": 0.12,
+      "joystick_opacity": 0.65,
+      "joystick_thumb_radius": 24,
+      "ui_tap_slop": 12
+    },
+    "navigation": {
+      "boat_radius": 16,
+      "obstacles": [
+        {
+          "x": 880,
+          "y": 1340,
+          "rx": 130,
+          "ry": 95,
+          "kind": "island"
+        },
+        {
+          "x": 470,
+          "y": 850,
+          "rx": 110,
+          "ry": 85,
+          "kind": "island"
+        },
+        {
+          "x": 1480,
+          "y": 430,
+          "rx": 190,
+          "ry": 120,
+          "kind": "island"
+        },
+        {
+          "x": 680,
+          "y": 2210,
+          "rx": 240,
+          "ry": 110,
+          "kind": "island"
+        },
+        {
+          "x": 2300,
+          "y": 1470,
+          "rx": 140,
+          "ry": 82,
+          "kind": "island"
+        },
+        {
+          "x": 3000,
+          "y": 330,
+          "rx": 200,
+          "ry": 130,
+          "kind": "island"
+        },
+        {
+          "x": 2750,
+          "y": 1100,
+          "rx": 77,
+          "ry": 55,
+          "kind": "rock"
+        }
+      ]
+    },
+    "presentation": {
+      "defender_patrol": [
+        {
+          "x": 2290,
+          "y": 1190
+        },
+        {
+          "x": 2580,
+          "y": 1190
+        },
+        {
+          "x": 2580,
+          "y": 1400
+        },
+        {
+          "x": 2230,
+          "y": 1330
+        }
+      ],
+      "golden_speed": 24,
+      "golden_spawn_radius": 180,
+      "golden_interaction_radius": 85,
+      "max_coin_views": 180,
+      "camera_move_duration_s": 0.6,
+      "camera_focus_duration_s": 1.5,
+      "camera_return_duration_s": 0.6,
+      "target_arrow_offset": 135,
+      "target_ring_radius": 68,
+      "golden_label_interval_s": 3,
+      "golden_scatter_radius": 64,
+      "golden_pile_count": 10,
+      "max_live_effects": 40
+    },
+    "docks": [
+      {
+        "id": "cargo",
+        "x": 880,
+        "y": 1395,
+        "end": {
+          "x": 880,
+          "y": 1460
+        },
+        "width": 38,
+        "equipment": "cargo",
+        "zone": 1
+      },
+      {
+        "id": "worker",
+        "x": 785,
+        "y": 1340,
+        "end": {
+          "x": 740,
+          "y": 1340
+        },
+        "width": 38,
+        "equipment": "worker",
+        "zone": 1
+      },
+      {
+        "id": "speedboat",
+        "x": 880,
+        "y": 1280,
+        "end": {
+          "x": 880,
+          "y": 1220
+        },
+        "width": 34,
+        "equipment": "speedboat",
+        "zone": 1
+      },
+      {
+        "id": "defender",
+        "x": 2250,
+        "y": 1430,
+        "end": {
+          "x": 2250,
+          "y": 1290
+        },
+        "width": 42,
+        "equipment": "defender",
+        "zone": 2
+      }
+    ],
+    "resource_burst": {
+      "duration_s": 0.35
+    }
+  },
+  "fast": {
+    "meta": {
+      "label": "Fast onboarding v1",
+      "source": "Design hypothesis derived from reference-inspired v1; tune after playtesting",
+      "caveat": "NOT measured gameplay timing; simplified simulation"
+    },
+    "units": {
+      "player": {
+        "speed": 165,
+        "capacity": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "gather_s": 1.5,
+        "deposit_s_per_crate": 0.09,
+        "hp": 80,
+        "damage": 8
+      },
+      "worker": {
+        "speed": 80.75,
+        "capacity": 3,
+        "gather_s": 1.95
+      },
+      "speedboat": {
+        "speed": 150,
+        "capacity": 2,
+        "gather_s": 1
+      },
+      "salvage": {
+        "speed": 95,
+        "capacity": 5,
+        "gather_s": 1.8
+      }
+    },
+    "workers": {
+      "base_cost": 75,
+      "cost_growth": 1.6,
+      "max_count": 10,
+      "timers_s": [
+        1,
+        7,
+        7,
+        15,
+        22,
+        37,
+        75,
+        120,
+        120,
+        120
+      ]
+    },
+    "capacity_upgrades": [
+      {
+        "level": 1,
+        "capacity": 2,
+        "cost": 13,
+        "build_s": 1
+      },
+      {
+        "level": 2,
+        "capacity": 4,
+        "cost": 98,
+        "build_s": 1
+      },
+      {
+        "level": 3,
+        "capacity": 5,
+        "cost": 325,
+        "build_s": 6
+      },
+      {
+        "level": 4,
+        "capacity": 6,
+        "cost": 650,
+        "build_s": 12
+      },
+      {
+        "level": 5,
+        "capacity": 7,
+        "cost": 1300,
+        "build_s": 24
+      },
+      {
+        "level": 6,
+        "capacity": 8,
+        "cost": 1950,
+        "build_s": 60
+      },
+      {
+        "level": 7,
+        "capacity": 9,
+        "cost": 3250,
+        "build_s": 120
+      },
+      {
+        "level": 8,
+        "capacity": 10,
+        "cost": 13000,
+        "build_s": 180
+      },
+      {
+        "level": 9,
+        "capacity": 11,
+        "cost": 48750,
+        "build_s": 240
+      },
+      {
+        "level": 10,
+        "capacity": 12,
+        "cost": 97500,
+        "build_s": 300
+      }
+    ],
+    "special": {
+      "speedboat": {
+        "cost": 200,
+        "build_s": 12
+      },
+      "combat": {
+        "cost": 12000,
+        "build_s": 120
+      }
+    },
+    "expansion": {
+      "gate": {
+        "cost": 2800,
+        "build_s": 120
+      },
+      "den": {
+        "cost": 9000,
+        "metal_cost": 50,
+        "build_s": 45
+      },
+      "route": {
+        "cost": 20000,
+        "metal_cost": 80,
+        "build_s": 60
+      }
+    },
+    "resources": {
+      "sardine": {
+        "name": "Сардины",
+        "value": 2,
+        "cost": 0,
+        "stock": 10,
+        "portion_hp": 120,
+        "regrow_s": 2,
+        "restock_s": 18,
+        "build_s": 0,
+        "distance": 398,
+        "zone": 1,
+        "drop_crates": 8,
+        "x": 1450,
+        "y": 1180,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#98ded0"
+      },
+      "crab": {
+        "name": "Крабы",
+        "value": 5,
+        "cost": 38,
+        "stock": 8,
+        "portion_hp": 140,
+        "regrow_s": 3,
+        "restock_s": 30,
+        "build_s": 1,
+        "distance": 511,
+        "zone": 1,
+        "drop_crates": 8,
+        "x": 1060,
+        "y": 840,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#fb9b72"
+      },
+      "mussel": {
+        "name": "Мидии",
+        "value": 6,
+        "cost": 294,
+        "stock": 6,
+        "portion_hp": 160,
+        "regrow_s": 4,
+        "restock_s": 60,
+        "build_s": 29,
+        "distance": 601,
+        "zone": 1,
+        "drop_crates": 8,
+        "x": 490,
+        "y": 1390,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#b5a2f5"
+      },
+      "snapper": {
+        "name": "Луциан",
+        "value": 10,
+        "cost": 672,
+        "stock": 5,
+        "portion_hp": 160,
+        "regrow_s": 6,
+        "restock_s": 140,
+        "build_s": 48,
+        "distance": 611,
+        "zone": 1,
+        "drop_crates": 8,
+        "x": 1130,
+        "y": 1960,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#f07982"
+      },
+      "tuna": {
+        "name": "Тунец",
+        "value": 15,
+        "cost": 1800,
+        "stock": 5,
+        "portion_hp": 200,
+        "regrow_s": 8,
+        "restock_s": 180,
+        "build_s": 96,
+        "distance": 849,
+        "zone": 1,
+        "drop_crates": 8,
+        "x": 1570,
+        "y": 650,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#73bae8"
+      },
+      "lobster": {
+        "name": "Омары",
+        "value": 28,
+        "cost": 5600,
+        "stock": 5,
+        "portion_hp": 300,
+        "regrow_s": 15,
+        "restock_s": 450,
+        "build_s": 144,
+        "distance": 850,
+        "zone": 2,
+        "drop_crates": 8,
+        "x": 2160,
+        "y": 950,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#ee804e"
+      },
+      "swordfish": {
+        "name": "Рыба-меч",
+        "value": 48,
+        "cost": 38500,
+        "stock": 4,
+        "portion_hp": 500,
+        "regrow_s": 24,
+        "restock_s": 750,
+        "build_s": 144,
+        "distance": 1050,
+        "zone": 2,
+        "drop_crates": 8,
+        "x": 2590,
+        "y": 650,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#b2d8ef"
+      },
+      "squid": {
+        "name": "Кальмар",
+        "value": 80,
+        "cost": 63000,
+        "stock": 3,
+        "portion_hp": 700,
+        "regrow_s": 30,
+        "restock_s": 1650,
+        "build_s": 144,
+        "distance": 1250,
+        "zone": 2,
+        "drop_crates": 8,
+        "x": 2860,
+        "y": 1720,
+        "gather_s": 1.5,
+        "damage_per_catch": 10,
+        "kind": "fish",
+        "color": "#cc99ec"
+      },
+      "wreck": {
+        "name": "Затонувший корабль",
+        "value": 0,
+        "cost": 1400,
+        "stock": 12,
+        "portion_hp": 50,
+        "regrow_s": 3,
+        "restock_s": 90,
+        "build_s": 20,
+        "distance": 600,
+        "zone": 2,
+        "drop_crates": 8,
+        "x": 2470,
+        "y": 1950,
+        "gather_s": 2,
+        "damage_per_catch": 10,
+        "kind": "metal",
+        "color": "#b1bfc1"
+      }
+    },
+    "monetization": {
+      "free_skip_below_s": 60,
+      "rewarded_skip_s": 900,
+      "golden_min_coins": 40,
+      "golden_estimate_seconds": 45,
+      "golden_first_s_assumption": 150,
+      "golden_cooldown_claimed_s": 150,
+      "golden_cooldown_missed_s": 250,
+      "golden_lifetime_s": 45,
+      "fake_ad_s": 2
+    },
+    "ai": {
+      "choose_best_probability": 0.65,
+      "worker_utilization_multiplier": 1
+    },
+    "simulation": {
+      "dt_s": 0.2,
+      "max_time_s": 14400,
+      "rng_seed": 42
+    },
+    "quests": [
+      {
+        "id": 1,
+        "zone": 1,
+        "label": "Поймать первую сардину",
+        "type": "catch_sardine",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "catch",
+        "reward_coins": 8,
+        "reward_metal": 0
+      },
+      {
+        "id": 2,
+        "zone": 1,
+        "label": "Доставить улов в порт",
+        "type": "deliver_fish",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "deposited",
+        "reward_coins": 12,
+        "reward_metal": 0
+      },
+      {
+        "id": 3,
+        "zone": 1,
+        "label": "Поймать всего 3 ящика улова",
+        "type": "catch_total",
+        "target": 3,
+        "progress_mode": "lifetime",
+        "completes_when": "catch",
+        "reward_coins": 16,
+        "reward_metal": 0
+      },
+      {
+        "id": 4,
+        "zone": 1,
+        "label": "Улучшить трюм до Lv.1",
+        "type": "cargo_level",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 16,
+        "reward_metal": 0
+      },
+      {
+        "id": 5,
+        "zone": 1,
+        "label": "Открыть крабовую отмель",
+        "type": "resource_ready",
+        "target": "crab",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 20,
+        "reward_metal": 0
+      },
+      {
+        "id": 6,
+        "zone": 1,
+        "label": "Нанять первую рабочую лодку",
+        "type": "normal_workers",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 24,
+        "reward_metal": 0
+      },
+      {
+        "id": 7,
+        "zone": 1,
+        "label": "Улучшить трюм до Lv.2",
+        "type": "cargo_level",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 32,
+        "reward_metal": 0
+      },
+      {
+        "id": 8,
+        "zone": 1,
+        "label": "Заработать 200 монет",
+        "type": "earn_coins",
+        "target": 200,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 40,
+        "reward_metal": 0
+      },
+      {
+        "id": 9,
+        "zone": 1,
+        "label": "Заказать скоростной катер",
+        "type": "speedboat_ordered",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "order_paid",
+        "reward_coins": 35,
+        "reward_metal": 0
+      },
+      {
+        "id": 10,
+        "zone": 1,
+        "label": "Получить скоростной катер",
+        "type": "speedboat_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 50,
+        "reward_metal": 0
+      },
+      {
+        "id": 11,
+        "zone": 1,
+        "label": "Открыть мидиевую банку",
+        "type": "resource_ready",
+        "target": "mussel",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 65,
+        "reward_metal": 0
+      },
+      {
+        "id": 12,
+        "zone": 1,
+        "label": "Довести обычный флот до 3 лодок",
+        "type": "normal_workers",
+        "target": 3,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 100,
+        "reward_metal": 0
+      },
+      {
+        "id": 13,
+        "zone": 1,
+        "label": "Открыть косяк красного луциана",
+        "type": "resource_ready",
+        "target": "snapper",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 140,
+        "reward_metal": 0
+      },
+      {
+        "id": 14,
+        "zone": 1,
+        "label": "Открыть косяк тунца",
+        "type": "resource_ready",
+        "target": "tuna",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 220,
+        "reward_metal": 0
+      },
+      {
+        "id": 15,
+        "zone": 1,
+        "label": "Открыть проход в открытое море",
+        "type": "area_unlocked",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 350,
+        "reward_metal": 0
+      },
+      {
+        "id": 16,
+        "zone": 2,
+        "label": "Приобрести боевой катер",
+        "type": "defender_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 630,
+        "reward_metal": 0
+      },
+      {
+        "id": 17,
+        "zone": 2,
+        "label": "Победить двух пиратов",
+        "type": "pirates_killed",
+        "target": 2,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 788,
+        "reward_metal": 0
+      },
+      {
+        "id": 18,
+        "zone": 2,
+        "label": "Открыть место ловли омаров",
+        "type": "resource_ready",
+        "target": "lobster",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 945,
+        "reward_metal": 0
+      },
+      {
+        "id": 19,
+        "zone": 2,
+        "label": "Увеличить флот до 5 обычных лодок",
+        "type": "normal_workers",
+        "target": 5,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 1103,
+        "reward_metal": 0
+      },
+      {
+        "id": 20,
+        "zone": 2,
+        "label": "Улучшить трюм до Lv.4",
+        "type": "cargo_level",
+        "target": 4,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 1260,
+        "reward_metal": 0
+      },
+      {
+        "id": 21,
+        "zone": 2,
+        "label": "Построить склад металлолома",
+        "type": "metal_storage_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 1418,
+        "reward_metal": 0
+      },
+      {
+        "id": 22,
+        "zone": 2,
+        "label": "Купить оборудование для резки металла",
+        "type": "metal_cutter_owned",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "order_paid",
+        "reward_coins": 1575,
+        "reward_metal": 0
+      },
+      {
+        "id": 23,
+        "zone": 2,
+        "label": "Доставить затонувший корабль",
+        "type": "wreck_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 1733,
+        "reward_metal": 0
+      },
+      {
+        "id": 24,
+        "zone": 2,
+        "label": "Доставить 10 единиц металлолома",
+        "type": "metal_deposited",
+        "target": 10,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 1890,
+        "reward_metal": 0
+      },
+      {
+        "id": 25,
+        "zone": 2,
+        "label": "Нанять первое судно-разборщик",
+        "type": "salvage_workers",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 2048,
+        "reward_metal": 0
+      },
+      {
+        "id": 26,
+        "zone": 2,
+        "label": "Доставить 50 единиц металлолома",
+        "type": "metal_deposited",
+        "target": 50,
+        "progress_mode": "since_activation",
+        "completes_when": "progress_reached",
+        "reward_coins": 2205,
+        "reward_metal": 0
+      },
+      {
+        "id": 27,
+        "zone": 2,
+        "label": "Открыть место ловли рыбы-меч",
+        "type": "resource_ready",
+        "target": "swordfish",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 2363,
+        "reward_metal": 0
+      },
+      {
+        "id": 28,
+        "zone": 2,
+        "label": "Увеличить флот до 7 обычных лодок",
+        "type": "normal_workers",
+        "target": 7,
+        "progress_mode": "lifetime",
+        "completes_when": "workers_ready",
+        "reward_coins": 2520,
+        "reward_metal": 0
+      },
+      {
+        "id": 29,
+        "zone": 2,
+        "label": "Улучшить трюм до Lv.6",
+        "type": "cargo_level",
+        "target": 6,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 2678,
+        "reward_metal": 0
+      },
+      {
+        "id": 30,
+        "zone": 2,
+        "label": "Увеличить вместимость склада металла до 150",
+        "type": "metal_storage_capacity",
+        "target": 150,
+        "progress_mode": "lifetime",
+        "completes_when": "upgrade_ready",
+        "reward_coins": 2835,
+        "reward_metal": 0
+      },
+      {
+        "id": 31,
+        "zone": 2,
+        "label": "Ликвидировать пиратское логово",
+        "type": "pirate_den_closed",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 2993,
+        "reward_metal": 0
+      },
+      {
+        "id": 32,
+        "zone": 2,
+        "label": "Открыть место ловли редкого кальмара",
+        "type": "resource_ready",
+        "target": "squid",
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 3150,
+        "reward_metal": 0
+      },
+      {
+        "id": 33,
+        "zone": 2,
+        "label": "Нанять второе судно-разборщик",
+        "type": "salvage_workers",
+        "target": 2,
+        "progress_mode": "lifetime",
+        "completes_when": "worker_ready",
+        "reward_coins": 3308,
+        "reward_metal": 0
+      },
+      {
+        "id": 34,
+        "zone": 2,
+        "label": "Открыть дальний морской маршрут",
+        "type": "expedition_route_ready",
+        "target": 1,
+        "progress_mode": "lifetime",
+        "completes_when": "timer_ready",
+        "reward_coins": 3465,
+        "reward_metal": 0
+      }
+    ],
+    "schema_version": 1,
+    "profile": "fast",
+    "world": {
+      "width": 3300,
+      "height": 2400,
+      "port": {
+        "x": 1090,
+        "y": 1350
+      },
+      "storage": {
+        "x": 2480,
+        "y": 1500
+      },
+      "gate_x": 1850,
+      "spawn": {
+        "x": 1150,
+        "y": 1350
+      },
+      "resource_radius": 78,
+      "pickup_radius": 35,
+      "deposit_radius": 38,
+      "crate_scatter_radius": 65,
+      "worker_pickup_radius": 150,
+      "arrival_radius": 12,
+      "camera_zoom": 1,
+      "edge_margin": 30,
+      "max_world_resource_crates": 150,
+      "floating_crate_lifetime_s": 60
+    },
+    "combat": {
+      "pirate_hp": 100,
+      "pirate_damage": 10,
+      "pirate_speed": 100,
+      "defender_hp": 240,
+      "defender_damage": 28,
+      "defender_speed": 150,
+      "attack_s": 1.2,
+      "attack_radius": 180,
+      "detect_radius": 450,
+      "chase_radius": 650,
+      "projectile_speed": 480,
+      "projectile_lifetime_s": 3,
+      "spawn_s": 18,
+      "max_enemies": 3,
+      "respawn_s": 8,
+      "spawner": {
+        "x": 2750,
+        "y": 1100
+      },
+      "defender_spawn": {
+        "x": 2290,
+        "y": 1190
+      }
+    },
+    "salvage": {
+      "storage": {
+        "cost": 1800,
+        "metal_cost": 0,
+        "build_s": 25,
+        "capacity": 100
+      },
+      "cutter": {
+        "cost": 700,
+        "metal_cost": 0,
+        "build_s": 0
+      },
+      "worker": {
+        "cost": 2600,
+        "cost_growth": 1.7,
+        "metal_cost": 0,
+        "build_s": 30,
+        "max_count": 3
+      },
+      "upgrade": {
+        "cost": 6500,
+        "metal_cost": 30,
+        "build_s": 40,
+        "capacity": 150
+      }
+    },
+    "save": {
+      "autosave_s": 5,
+      "max_events": 5000
+    },
+    "interaction": {
+      "purchase_radius": 48,
+      "coins_per_s": 100,
+      "metal_per_s": 8,
+      "coin_delay_s": 0.4,
+      "coin_radius": 38,
+      "coin_speed": 420,
+      "max_coin_stacks": 12,
+      "purchase_points": {
+        "cargo": {
+          "x": 880,
+          "y": 1530
+        },
+        "worker": {
+          "x": 670,
+          "y": 1340
+        },
+        "speedboat": {
+          "x": 880,
+          "y": 1150
+        },
+        "gate": {
+          "x": 1750,
+          "y": 1280
+        },
+        "defender": {
+          "x": 2250,
+          "y": 1220
+        },
+        "storage": {
+          "x": 2470,
+          "y": 1370
+        },
+        "cutter": {
+          "x": 2420,
+          "y": 1640
+        },
+        "salvage": {
+          "x": 2690,
+          "y": 1510
+        },
+        "storageUpgrade": {
+          "x": 2600,
+          "y": 1370
+        },
+        "den": {
+          "x": 2680,
+          "y": 1280
+        },
+        "route": {
+          "x": 3080,
+          "y": 2060
+        }
+      },
+      "purchase_stationary_delay_s": 0.25,
+      "purchase_max_stationary_speed": 5,
+      "coin_scatter_radius": 22,
+      "reveal_at_quest": {
+        "cargo": 4,
+        "worker": 6,
+        "speedboat": 9,
+        "resource:sardine": 1,
+        "resource:crab": 5,
+        "resource:mussel": 11,
+        "resource:snapper": 13,
+        "resource:tuna": 14,
+        "gate": 15,
+        "defender": 16,
+        "resource:lobster": 18,
+        "storage": 21,
+        "cutter": 22,
+        "resource:wreck": 23,
+        "salvage": 25,
+        "resource:swordfish": 27,
+        "storageUpgrade": 30,
+        "den": 31,
+        "resource:squid": 32,
+        "route": 34
+      },
+      "purchase_cooldown_s": 5,
+      "purchase_exit_hysteresis": 10,
+      "purchase_pour_min_seconds": 1,
+      "purchase_pour_max_seconds": 3,
+      "purchase_pour_ease": 1.4,
+      "purchase_pour_cost_scale": 100,
+      "joystick_radius": 59,
+      "joystick_deadzone": 0.12,
+      "joystick_opacity": 0.65,
+      "joystick_thumb_radius": 24,
+      "ui_tap_slop": 12
+    },
+    "navigation": {
+      "boat_radius": 16,
+      "obstacles": [
+        {
+          "x": 880,
+          "y": 1340,
+          "rx": 130,
+          "ry": 95,
+          "kind": "island"
+        },
+        {
+          "x": 470,
+          "y": 850,
+          "rx": 110,
+          "ry": 85,
+          "kind": "island"
+        },
+        {
+          "x": 1480,
+          "y": 430,
+          "rx": 190,
+          "ry": 120,
+          "kind": "island"
+        },
+        {
+          "x": 680,
+          "y": 2210,
+          "rx": 240,
+          "ry": 110,
+          "kind": "island"
+        },
+        {
+          "x": 2300,
+          "y": 1470,
+          "rx": 140,
+          "ry": 82,
+          "kind": "island"
+        },
+        {
+          "x": 3000,
+          "y": 330,
+          "rx": 200,
+          "ry": 130,
+          "kind": "island"
+        },
+        {
+          "x": 2750,
+          "y": 1100,
+          "rx": 77,
+          "ry": 55,
+          "kind": "rock"
+        }
+      ]
+    },
+    "presentation": {
+      "defender_patrol": [
+        {
+          "x": 2290,
+          "y": 1190
+        },
+        {
+          "x": 2580,
+          "y": 1190
+        },
+        {
+          "x": 2580,
+          "y": 1400
+        },
+        {
+          "x": 2230,
+          "y": 1330
+        }
+      ],
+      "golden_speed": 24,
+      "golden_spawn_radius": 180,
+      "golden_interaction_radius": 85,
+      "max_coin_views": 180,
+      "camera_move_duration_s": 0.6,
+      "camera_focus_duration_s": 1.5,
+      "camera_return_duration_s": 0.6,
+      "target_arrow_offset": 135,
+      "target_ring_radius": 68,
+      "golden_label_interval_s": 3,
+      "golden_scatter_radius": 64,
+      "golden_pile_count": 10,
+      "max_live_effects": 40
+    },
+    "docks": [
+      {
+        "id": "cargo",
+        "x": 880,
+        "y": 1395,
+        "end": {
+          "x": 880,
+          "y": 1460
+        },
+        "width": 38,
+        "equipment": "cargo",
+        "zone": 1
+      },
+      {
+        "id": "worker",
+        "x": 785,
+        "y": 1340,
+        "end": {
+          "x": 740,
+          "y": 1340
+        },
+        "width": 38,
+        "equipment": "worker",
+        "zone": 1
+      },
+      {
+        "id": "speedboat",
+        "x": 880,
+        "y": 1280,
+        "end": {
+          "x": 880,
+          "y": 1220
+        },
+        "width": 34,
+        "equipment": "speedboat",
+        "zone": 1
+      },
+      {
+        "id": "defender",
+        "x": 2250,
+        "y": 1430,
+        "end": {
+          "x": 2250,
+          "y": 1290
+        },
+        "width": 42,
+        "equipment": "defender",
+        "zone": 2
+      }
+    ],
+    "resource_burst": {
+      "duration_s": 0.35
+    }
+  }
+}

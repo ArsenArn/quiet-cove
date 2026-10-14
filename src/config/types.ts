@@ -1,0 +1,33 @@
+export type Profile = 'fast' | 'reference';
+export type Point = { x: number; y: number };
+export type TrafficConfig = { radii:Record<'player'|'worker'|'speedboat'|'salvage'|'defender'|'pirate',number>; neighbor_radius:number; correction_speed:number; arrival_spacing:number; stuck_s:number; repath_s:number };
+export type Cost = { cost: number; build_s: number; metal_cost?: number };
+export type Unit = { speed: number; capacity: number; gather_s: number };
+export type ResourceConfig = Cost & Point & { name: string; value: number; stock: number; portion_hp: number; regrow_s: number; restock_s: number; distance: number; zone: number; drop_crates: number; gather_s: number; damage_per_catch: number; kind: 'fish' | 'metal'; color: string };
+export type Quest = { id: number; zone: number; label: string; type: string; target: string | number; progress_mode: 'lifetime' | 'since_activation'; completes_when: string; reward_coins: number; reward_metal: number };
+export interface Balance {
+  schema_version: number; profile: Profile; meta: { label: string; source: string; caveat: string };
+  world: { width: number; height: number; port: Point; storage: Point; gate_x: number; spawn: Point; resource_radius: number; pickup_radius: number; deposit_radius: number; crate_scatter_radius: number; worker_pickup_radius: number; arrival_radius: number; camera_zoom: number; edge_margin: number; max_world_resource_crates:number; floating_crate_lifetime_s:number };
+  units: { player: { speed: number; capacity: number[]; gather_s: number; deposit_s_per_crate: number; hp: number; damage: number }; worker: Unit; speedboat: Unit; salvage: Unit };
+  fast_zone2?: { worker_costs: Record<number,number>; cargo_costs: Record<number,number> };
+  zone2_layout?: { fish_unload: Point; entrance_dock: Point; purchase_label_positions?: Record<string,Point> };
+  workers: { base_cost: number; cost_growth: number; max_count: number; timers_s: number[] };
+  capacity_upgrades: (Cost & { level: number; capacity: number })[];
+  special: { speedboat: Cost; combat: Cost };
+  expansion: { gate: Cost; den: Cost; route: Cost };
+  second_port?: Cost & { unload:Point; hut:Point };
+  player_regen?: { delay_s:number; hp_per_s:number };
+  resources: Record<string, ResourceConfig>;
+  combat: { pirate_hp: number; pirate_damage: number; pirate_speed: number; defender_hp: number; defender_damage: number; defender_speed: number; attack_s: number; attack_radius: number; detect_radius: number; chase_radius: number; projectile_speed: number; projectile_lifetime_s: number; spawn_s: number; max_enemies: number; respawn_s: number; spawner: Point; defender_home?:Point; defender_spawn: Point };
+  salvage: { storage: Cost & { capacity: number }; cutter: Cost; worker: Cost & { cost_growth: number; max_count: number; timers_s?:number[] }; upgrade: Cost & { capacity: number } };
+  monetization: { free_skip_below_s: number; rewarded_skip_s: number; golden_min_coins: number; golden_estimate_seconds: number; golden_first_s_assumption: number; golden_cooldown_claimed_s: number; golden_cooldown_missed_s: number; golden_lifetime_s: number; fake_ad_s: number };
+  ai: { choose_best_probability: number; worker_utilization_multiplier: number };
+  simulation: { dt_s: number; max_time_s: number; rng_seed: number };
+  save: { autosave_s: number; max_events: number };
+  interaction: { purchase_radius: number; purchase_stationary_delay_s: number; purchase_max_stationary_speed: number; purchase_cooldown_s:number; purchase_exit_hysteresis:number; purchase_pour_min_seconds:number; purchase_pour_max_seconds:number; purchase_pour_ease:number; purchase_pour_cost_scale:number; joystick_radius:number; joystick_deadzone:number; joystick_opacity:number; joystick_thumb_radius:number; ui_tap_slop:number; reveal_at_quest: Record<string,number>; coins_per_s: number; metal_per_s: number; coin_delay_s: number; coin_radius: number; coin_speed: number; coin_scatter_radius: number; max_coin_stacks: number; purchase_points: Record<string,Point> };
+  navigation: { boat_radius:number; obstacles:(Point & {rx:number;ry:number;kind:'island'|'rock'})[]; traffic?:TrafficConfig };
+  presentation: { defender_patrol:Point[]; golden_speed:number; golden_spawn_radius:number; golden_interaction_radius:number; golden_label_interval_s:number; golden_scatter_radius:number; golden_pile_count:number; max_coin_views:number; max_live_effects:number; camera_focus_duration_s:number; camera_move_duration_s:number; camera_return_duration_s:number; target_arrow_offset:number; target_ring_radius:number };
+  docks: (Point & {id:string; end:Point; width:number; equipment:'cargo'|'worker'|'speedboat'|'defender'; zone:number})[];
+  resource_burst: { duration_s:number };
+  quests: Quest[];
+}

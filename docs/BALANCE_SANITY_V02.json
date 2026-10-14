@@ -1,0 +1,510 @@
+[
+  {
+    "profile": "fast",
+    "golden": false,
+    "totalSimulationSeconds": 1195,
+    "rows": [
+      {
+        "quest": 1,
+        "simulationSeconds": 2,
+        "collectedSales": 0,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": false,
+        "reward": 8
+      },
+      {
+        "quest": 2,
+        "simulationSeconds": 0.8,
+        "collectedSales": 0,
+        "cashBeforeReward": 8,
+        "waitedForNewCash": false,
+        "reward": 12
+      },
+      {
+        "quest": 3,
+        "simulationSeconds": 7,
+        "collectedSales": 4,
+        "cashBeforeReward": 24,
+        "waitedForNewCash": false,
+        "reward": 16
+      },
+      {
+        "quest": 4,
+        "simulationSeconds": 2.6,
+        "collectedSales": 0,
+        "cashBeforeReward": 27,
+        "waitedForNewCash": false,
+        "reward": 16
+      },
+      {
+        "quest": 5,
+        "simulationSeconds": 3.8,
+        "collectedSales": 2,
+        "cashBeforeReward": 7,
+        "waitedForNewCash": false,
+        "reward": 20
+      },
+      {
+        "quest": 6,
+        "simulationSeconds": 58.6,
+        "collectedSales": 50,
+        "cashBeforeReward": 2,
+        "waitedForNewCash": true,
+        "reward": 24
+      },
+      {
+        "quest": 7,
+        "simulationSeconds": 49.6,
+        "collectedSales": 82,
+        "cashBeforeReward": 10,
+        "waitedForNewCash": true,
+        "reward": 32
+      },
+      {
+        "quest": 8,
+        "simulationSeconds": 80.2,
+        "collectedSales": 210,
+        "cashBeforeReward": 252,
+        "waitedForNewCash": false,
+        "reward": 40
+      },
+      {
+        "quest": 9,
+        "simulationSeconds": 4.2,
+        "collectedSales": 0,
+        "cashBeforeReward": 92,
+        "waitedForNewCash": false,
+        "reward": 35
+      },
+      {
+        "quest": 10,
+        "simulationSeconds": 12,
+        "collectedSales": 0,
+        "cashBeforeReward": 127,
+        "waitedForNewCash": false,
+        "reward": 50
+      },
+      {
+        "quest": 11,
+        "simulationSeconds": 60.2,
+        "collectedSales": 237,
+        "cashBeforeReward": 120,
+        "waitedForNewCash": true,
+        "reward": 65
+      },
+      {
+        "quest": 12,
+        "simulationSeconds": 68.4,
+        "collectedSales": 263,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": true,
+        "reward": 100
+      },
+      {
+        "quest": 13,
+        "simulationSeconds": 157.2,
+        "collectedSales": 822,
+        "cashBeforeReward": 250,
+        "waitedForNewCash": true,
+        "reward": 140
+      },
+      {
+        "quest": 14,
+        "simulationSeconds": 317.6,
+        "collectedSales": 1907,
+        "cashBeforeReward": 497,
+        "waitedForNewCash": true,
+        "reward": 220
+      },
+      {
+        "quest": 15,
+        "simulationSeconds": 370.8,
+        "collectedSales": 3135,
+        "cashBeforeReward": 985,
+        "waitedForNewCash": true,
+        "reward": 350
+      }
+    ]
+  },
+  {
+    "profile": "fast",
+    "golden": true,
+    "totalSimulationSeconds": 1023,
+    "rows": [
+      {
+        "quest": 1,
+        "simulationSeconds": 2,
+        "collectedSales": 0,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": false,
+        "reward": 8
+      },
+      {
+        "quest": 2,
+        "simulationSeconds": 0.8,
+        "collectedSales": 0,
+        "cashBeforeReward": 8,
+        "waitedForNewCash": false,
+        "reward": 12
+      },
+      {
+        "quest": 3,
+        "simulationSeconds": 7,
+        "collectedSales": 4,
+        "cashBeforeReward": 24,
+        "waitedForNewCash": false,
+        "reward": 16
+      },
+      {
+        "quest": 4,
+        "simulationSeconds": 2.6,
+        "collectedSales": 0,
+        "cashBeforeReward": 27,
+        "waitedForNewCash": false,
+        "reward": 16
+      },
+      {
+        "quest": 5,
+        "simulationSeconds": 3.8,
+        "collectedSales": 2,
+        "cashBeforeReward": 7,
+        "waitedForNewCash": false,
+        "reward": 20
+      },
+      {
+        "quest": 6,
+        "simulationSeconds": 58.6,
+        "collectedSales": 50,
+        "cashBeforeReward": 2,
+        "waitedForNewCash": true,
+        "reward": 24
+      },
+      {
+        "quest": 7,
+        "simulationSeconds": 49.6,
+        "collectedSales": 82,
+        "cashBeforeReward": 10,
+        "waitedForNewCash": true,
+        "reward": 32
+      },
+      {
+        "quest": 8,
+        "simulationSeconds": 80.2,
+        "collectedSales": 210,
+        "cashBeforeReward": 346,
+        "waitedForNewCash": false,
+        "reward": 40
+      },
+      {
+        "quest": 9,
+        "simulationSeconds": 4.2,
+        "collectedSales": 0,
+        "cashBeforeReward": 186,
+        "waitedForNewCash": false,
+        "reward": 35
+      },
+      {
+        "quest": 10,
+        "simulationSeconds": 12,
+        "collectedSales": 0,
+        "cashBeforeReward": 221,
+        "waitedForNewCash": false,
+        "reward": 50
+      },
+      {
+        "quest": 11,
+        "simulationSeconds": 41,
+        "collectedSales": 168,
+        "cashBeforeReward": 145,
+        "waitedForNewCash": true,
+        "reward": 65
+      },
+      {
+        "quest": 12,
+        "simulationSeconds": 46.6,
+        "collectedSales": 146,
+        "cashBeforeReward": 112,
+        "waitedForNewCash": true,
+        "reward": 100
+      },
+      {
+        "quest": 13,
+        "simulationSeconds": 158,
+        "collectedSales": 853,
+        "cashBeforeReward": 595,
+        "waitedForNewCash": true,
+        "reward": 140
+      },
+      {
+        "quest": 14,
+        "simulationSeconds": 233.2,
+        "collectedSales": 1505,
+        "cashBeforeReward": 642,
+        "waitedForNewCash": true,
+        "reward": 220
+      },
+      {
+        "quest": 15,
+        "simulationSeconds": 323.4,
+        "collectedSales": 2819,
+        "cashBeforeReward": 1407,
+        "waitedForNewCash": true,
+        "reward": 350
+      }
+    ]
+  },
+  {
+    "profile": "reference",
+    "golden": false,
+    "totalSimulationSeconds": 5167.6,
+    "rows": [
+      {
+        "quest": 1,
+        "simulationSeconds": 2,
+        "collectedSales": 0,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": false,
+        "reward": 12
+      },
+      {
+        "quest": 2,
+        "simulationSeconds": 0.8,
+        "collectedSales": 0,
+        "cashBeforeReward": 12,
+        "waitedForNewCash": false,
+        "reward": 18
+      },
+      {
+        "quest": 3,
+        "simulationSeconds": 7,
+        "collectedSales": 4,
+        "cashBeforeReward": 34,
+        "waitedForNewCash": false,
+        "reward": 24
+      },
+      {
+        "quest": 4,
+        "simulationSeconds": 6.6,
+        "collectedSales": 2,
+        "cashBeforeReward": 40,
+        "waitedForNewCash": false,
+        "reward": 24
+      },
+      {
+        "quest": 5,
+        "simulationSeconds": 63.8,
+        "collectedSales": 26,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": true,
+        "reward": 35
+      },
+      {
+        "quest": 6,
+        "simulationSeconds": 95.4,
+        "collectedSales": 66,
+        "cashBeforeReward": 1,
+        "waitedForNewCash": true,
+        "reward": 45
+      },
+      {
+        "quest": 7,
+        "simulationSeconds": 87.8,
+        "collectedSales": 116,
+        "cashBeforeReward": 12,
+        "waitedForNewCash": true,
+        "reward": 60
+      },
+      {
+        "quest": 8,
+        "simulationSeconds": 104,
+        "collectedSales": 202,
+        "cashBeforeReward": 274,
+        "waitedForNewCash": false,
+        "reward": 80
+      },
+      {
+        "quest": 9,
+        "simulationSeconds": 6,
+        "collectedSales": 18,
+        "cashBeforeReward": 72,
+        "waitedForNewCash": false,
+        "reward": 60
+      },
+      {
+        "quest": 10,
+        "simulationSeconds": 30,
+        "collectedSales": 62,
+        "cashBeforeReward": 194,
+        "waitedForNewCash": false,
+        "reward": 90
+      },
+      {
+        "quest": 11,
+        "simulationSeconds": 360.8,
+        "collectedSales": 918,
+        "cashBeforeReward": 502,
+        "waitedForNewCash": true,
+        "reward": 120
+      },
+      {
+        "quest": 12,
+        "simulationSeconds": 71,
+        "collectedSales": 212,
+        "cashBeforeReward": 288,
+        "waitedForNewCash": false,
+        "reward": 180
+      },
+      {
+        "quest": 13,
+        "simulationSeconds": 602.2,
+        "collectedSales": 2692,
+        "cashBeforeReward": 1533,
+        "waitedForNewCash": true,
+        "reward": 240
+      },
+      {
+        "quest": 14,
+        "simulationSeconds": 1495.4,
+        "collectedSales": 7798,
+        "cashBeforeReward": 3571,
+        "waitedForNewCash": true,
+        "reward": 450
+      },
+      {
+        "quest": 15,
+        "simulationSeconds": 2234.8,
+        "collectedSales": 14958,
+        "cashBeforeReward": 6889,
+        "waitedForNewCash": true,
+        "reward": 700
+      }
+    ]
+  },
+  {
+    "profile": "reference",
+    "golden": true,
+    "totalSimulationSeconds": 4055,
+    "rows": [
+      {
+        "quest": 1,
+        "simulationSeconds": 2,
+        "collectedSales": 0,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": false,
+        "reward": 12
+      },
+      {
+        "quest": 2,
+        "simulationSeconds": 0.8,
+        "collectedSales": 0,
+        "cashBeforeReward": 12,
+        "waitedForNewCash": false,
+        "reward": 18
+      },
+      {
+        "quest": 3,
+        "simulationSeconds": 7,
+        "collectedSales": 4,
+        "cashBeforeReward": 34,
+        "waitedForNewCash": false,
+        "reward": 24
+      },
+      {
+        "quest": 4,
+        "simulationSeconds": 6.6,
+        "collectedSales": 2,
+        "cashBeforeReward": 40,
+        "waitedForNewCash": false,
+        "reward": 24
+      },
+      {
+        "quest": 5,
+        "simulationSeconds": 63.8,
+        "collectedSales": 26,
+        "cashBeforeReward": 0,
+        "waitedForNewCash": true,
+        "reward": 35
+      },
+      {
+        "quest": 6,
+        "simulationSeconds": 75.2,
+        "collectedSales": 50,
+        "cashBeforeReward": 60,
+        "waitedForNewCash": true,
+        "reward": 45
+      },
+      {
+        "quest": 7,
+        "simulationSeconds": 40,
+        "collectedSales": 62,
+        "cashBeforeReward": 17,
+        "waitedForNewCash": true,
+        "reward": 60
+      },
+      {
+        "quest": 8,
+        "simulationSeconds": 104.8,
+        "collectedSales": 206,
+        "cashBeforeReward": 407,
+        "waitedForNewCash": false,
+        "reward": 80
+      },
+      {
+        "quest": 9,
+        "simulationSeconds": 6.2,
+        "collectedSales": 16,
+        "cashBeforeReward": 203,
+        "waitedForNewCash": false,
+        "reward": 60
+      },
+      {
+        "quest": 10,
+        "simulationSeconds": 30,
+        "collectedSales": 62,
+        "cashBeforeReward": 325,
+        "waitedForNewCash": false,
+        "reward": 90
+      },
+      {
+        "quest": 11,
+        "simulationSeconds": 297.2,
+        "collectedSales": 718,
+        "cashBeforeReward": 779,
+        "waitedForNewCash": true,
+        "reward": 120
+      },
+      {
+        "quest": 12,
+        "simulationSeconds": 70.8,
+        "collectedSales": 214,
+        "cashBeforeReward": 582,
+        "waitedForNewCash": false,
+        "reward": 180
+      },
+      {
+        "quest": 13,
+        "simulationSeconds": 436.6,
+        "collectedSales": 1930,
+        "cashBeforeReward": 1881,
+        "waitedForNewCash": true,
+        "reward": 240
+      },
+      {
+        "quest": 14,
+        "simulationSeconds": 1144.8,
+        "collectedSales": 6332,
+        "cashBeforeReward": 4557,
+        "waitedForNewCash": true,
+        "reward": 450
+      },
+      {
+        "quest": 15,
+        "simulationSeconds": 1769.2,
+        "collectedSales": 11404,
+        "cashBeforeReward": 7884,
+        "waitedForNewCash": true,
+        "reward": 700
+      }
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "name": "quiet-cove-fishing",
+  "version": "0.4.0-beta.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:analytics": "vitest run tests/analytics-v07a.test.ts tests/analytics-v07b.test.ts",
+    "test:analytics-browser": "node scripts/browser-analytics-v07a.mjs",
+    "test:watch": "vitest",
+    "test:smoke": "node scripts/browser-smoke.mjs",
+    "quests": "node scripts/quest-table.mjs",
+    "test:ux": "node scripts/browser-v032.mjs",
+    "test:corrections": "node scripts/browser-v032.mjs",
+    "balance": "node scripts/balance-v04a.mjs --label=final",
+    "balance:baseline": "node scripts/balance-v04a.mjs --baseline --label=baseline-final",
+    "balance:stress": "node scripts/balance-stress-v04a.mjs",
+    "balance:reports": "node scripts/balance-reports-v04a.mjs",
+    "test:economy-browser": "node scripts/browser-v04a.mjs",
+    "test:traffic": "node scripts/traffic-stress-v04b.mjs",
+    "test:traffic-browser": "node scripts/browser-v04b.mjs",
+    "test:traffic-ux": "node scripts/browser-ux-v04b.mjs",
+    "test:vfx": "node scripts/browser-v05c.mjs",
+    "test:vfx-timeline": "node scripts/browser-animation-timeline-v05c.mjs",
+    "test:v05c-regression": "node scripts/browser-regression-v05c.mjs gameplay",
+    "test:v05c-ux": "node scripts/browser-regression-v05c.mjs ux",
+    "test:v05c-traffic": "node scripts/browser-regression-v05c.mjs traffic"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^22.20.5",
+    "typescript": "~5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.0"
+  }
+}

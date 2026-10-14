@@ -1,0 +1,5 @@
+{
+  "default_profile": "fast",
+  "allow_debug_profile_switch": true,
+  "query_override": true
+}
