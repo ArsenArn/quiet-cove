@@ -1,5 +1,7 @@
 # Quiet Cove
 
+![Quiet Cove — A Quiet Bay](A%20quiet%20bay.png)
+
 **An incremental fishing game prototype**
 
 **Play online:** https://quiet-cove.netlify.app/  
